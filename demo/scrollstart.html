@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>scroll-start demo</title>
+  <style>
+    body {
+      scroll-start: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>Example navbar</nav>
+  <main scroll-start-target>Scroll should start here</main>
+
+  <script type="module">
+    import { scrollstart } from '../src/index.js'
+    scrollstart()
+    // import { scrollstart } from '../dist/scrollyfills.modern.js'
+    
+  </script>
+</body>
+</html>
