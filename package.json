@@ -6,7 +6,7 @@
   "author": "argyleink",
   "license": "ISC",
   "type": "module",
-  "source": "src/scrollyfills.js",
+  "source": "src/index.js",
   "exports": {
     "require": "./dist/scrollyfills.cjs",
     "default": "./dist/scrollyfills.modern.js"
