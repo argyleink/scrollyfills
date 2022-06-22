@@ -1,2 +1,2 @@
-var n="onscrollend"in window,e=new Event("scrollend"),t=function(t){n?t.addEventListener("scrollend",function(){t.dispatchEvent(e)}):t.addEventListener("scroll",function(){clearTimeout(t.scrollEndTimer),t.scrollEndTimer=setTimeout(function(){t.dispatchEvent(e)},100)})};export{t as scrollend};
+var n="onscrollend"in window,e=new Event("scrollend"),o=function(o){n||o.addEventListener("scroll",function(){clearTimeout(o.scrollEndTimer),o.scrollEndTimer=setTimeout(function(){o.dispatchEvent(e)},100)})};export{o as scrollend};
 //# sourceMappingURL=scrollyfills.module.js.map

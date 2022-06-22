@@ -1,2 +1,2 @@
-const e="onscrollend"in window,n=new Event("scrollend"),t=t=>{e?t.addEventListener("scrollend",()=>{t.dispatchEvent(n)}):t.addEventListener("scroll",()=>{clearTimeout(t.scrollEndTimer),t.scrollEndTimer=setTimeout(()=>{t.dispatchEvent(n)},100)})};export{t as scrollend};
+const e="onscrollend"in window,n=new Event("scrollend"),l=l=>{e||l.addEventListener("scroll",()=>{clearTimeout(l.scrollEndTimer),l.scrollEndTimer=setTimeout(()=>{l.dispatchEvent(n)},100)})};export{l as scrollend};
 //# sourceMappingURL=scrollyfills.modern.js.map

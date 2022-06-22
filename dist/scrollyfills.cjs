@@ -1,2 +1,2 @@
-var n="onscrollend"in window,e=new Event("scrollend");exports.scrollend=function(t){n?t.addEventListener("scrollend",function(){t.dispatchEvent(e)}):t.addEventListener("scroll",function(){clearTimeout(t.scrollEndTimer),t.scrollEndTimer=setTimeout(function(){t.dispatchEvent(e)},100)})};
+var n="onscrollend"in window,e=new Event("scrollend");exports.scrollend=function(o){n||o.addEventListener("scroll",function(){clearTimeout(o.scrollEndTimer),o.scrollEndTimer=setTimeout(function(){o.dispatchEvent(e)},100)})};
 //# sourceMappingURL=scrollyfills.cjs.map
