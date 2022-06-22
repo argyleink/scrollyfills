@@ -1,0 +1,31 @@
+{
+  "name": "scrollyfills",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/argyleink/scrollyfills#readme",
+  "author": "argyleink",
+  "license": "ISC",
+  "type": "module",
+  "source": "src/scrollyfills.js",
+  "exports": {
+    "require": "./dist/scrollyfills.cjs",
+    "default": "./dist/scrollyfills.modern.js"
+  },
+  "main": "./dist/scrollyfills.cjs", 
+  "module": "./dist/scrollyfills.module.js",
+  "unpkg": "./dist/scrollyfills.umd.js",
+  "scripts": {
+    "build": "microbundle",
+    "dev": "microbundle watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/argyleink/scrollyfills.git"
+  },
+  "bugs": {
+    "url": "https://github.com/argyleink/scrollyfills/issues"
+  },
+  "devDependencies": {
+    "microbundle": "^0.15.0"
+  }
+}
