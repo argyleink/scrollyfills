@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>scrollend demo</title>
+  <style>
+    body {
+      min-block-size: 200vh;
+    }
+  </style>
+</head>
+<body>
+  <p>See console for event output</p>
+
+  <script type="module">
+    import { scrollend } from '../dist/scrollyfills.modern.js'
+    scrollend(document)
+
+    document.addEventListener('scrollend', event => {
+      console.log('Scroll ended', event)
+    })
+  </script>
+</body>
+</html>
