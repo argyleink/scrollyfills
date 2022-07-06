@@ -8,13 +8,7 @@
 
 ### `scrollend`
 ```js
-import { scrollend } from 'scrollyfills';
-
-// get a reference to a scrolling element
-let someElementThatScrolls = document.querySelector('.scrolling');
-
-// attach the polyfill to the element
-scrollend(someElementThatScrolls);
+import 'scrollyfills';
 
 // use the new event as if it's been there the whole time
 someElementThatScrolls.addEventListener('scrollend', event => {
