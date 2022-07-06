@@ -14,8 +14,7 @@
   <p>See console for event output</p>
 
   <script type="module">
-    import { scrollend } from '../dist/scrollyfills.modern.js'
-    scrollend(document)
+    import '../dist/scrollyfills.modern.js'
 
     document.addEventListener('scrollend', event => {
       console.log('Scroll ended', event)
