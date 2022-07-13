@@ -8,7 +8,7 @@
 
 ### `scrollend`
 ```js
-import 'scrollyfills';
+import {scrollend} 'scrollyfills';
 
 // use the new event as if it's been there the whole time
 someElementThatScrolls.addEventListener('scrollend', event => {
