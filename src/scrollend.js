@@ -2,6 +2,18 @@ const supported = "onscrollend" in window
 
 if (!supported) {
   const scrollendEvent = new Event('scrollend');
+  const pointers = new Set();
+
+  // Track if any pointer is active
+  document.addEventListener('touchstart', e => {
+    for (let touch of e.changedTouches) 
+      pointers.add(touch.identifier)
+  }, {passive: true});
+
+  document.addEventListener('touchend', e => {
+    for (let touch of e.changedTouches)
+      pointers.delete(touch.identifier)
+  }, {passive: true});
 
   // Map of scroll-observed elements.
   let observed = new WeakMap();
@@ -32,8 +44,15 @@ if (!supported) {
         scrollListener: (evt) => {
           clearTimeout(timeout);
           timeout = setTimeout(() => {
-            scrollport.dispatchEvent(scrollendEvent);
-            timeout = 0;
+            if (pointers.size) {
+              // if pointer(s) are down, wait longer
+              setTimeout(data.scrollListener, 100)
+            }
+            else {
+              // dispatch
+              scrollport.dispatchEvent(scrollendEvent);
+              timeout = 0;
+            }
           }, 100);
         },
         listeners: 0, // Count of number of listeners.
