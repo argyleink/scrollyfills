@@ -1,6 +1,6 @@
 {
   "name": "scrollyfills",
-  "version": "1.0.0",
+  "version": "0.0.5",
   "description": "",
   "homepage": "https://github.com/argyleink/scrollyfills#readme",
   "author": "argyleink",
@@ -16,7 +16,8 @@
   "unpkg": "./dist/scrollyfills.umd.js",
   "scripts": {
     "build": "microbundle",
-    "dev": "microbundle watch"
+    "dev": "microbundle watch",
+    "demo": "npx live-server ./"
   },
   "repository": {
     "type": "git",

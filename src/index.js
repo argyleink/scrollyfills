@@ -1,1 +1,1 @@
-export {} from './scrollend.js'
+export * as scrollend from './scrollend.js'
