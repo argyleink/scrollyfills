@@ -2,11 +2,12 @@
 #### Various importable functions to assist in polyfilling specced scroll features
 
 <br>
-<br>
 
 ## Polyfills
 
 ### `scrollend`
+`npm i -D scrollyfills`
+
 ```js
 import {scrollend} from 'scrollyfills';
 
