@@ -1,3 +1,5 @@
+// @ts-check
+
 const supported = "onscrollend" in window
 
 if (!supported) {
@@ -17,6 +19,8 @@ if (!supported) {
 
   // Map of scroll-observed elements.
   let observed = new WeakMap();
+  let handle;
+  let snapshot;
 
   // Forward and observe calls to a native method.
   function observe(proto, method, handler) {
@@ -39,21 +43,27 @@ if (!supported) {
     let scrollport = this;
     let data = observed.get(scrollport);
     if (data === undefined) {
-      let timeout = 0;
       data = {
         scrollListener: (evt) => {
-          clearTimeout(timeout);
-          timeout = setTimeout(() => {
-            if (pointers.size) {
-              // if pointer(s) are down, wait longer
-              setTimeout(data.scrollListener, 100)
+          if(typeof handle !== 'undefined') {
+            cancelAnimationFrame(handle);
+          }
+          handle = requestAnimationFrame(() => handle = requestAnimationFrame(() => {
+            if(typeof snapshot === 'undefined') {
+              snapshot = handle;
             }
-            else {
-              // dispatch
-              scrollport.dispatchEvent(scrollendEvent);
-              timeout = 0;
+            if(handle - snapshot > 30) {
+              if (pointers.size) {
+                // if pointer(s) are down, wait longer
+                setTimeout(data.scrollListener, 100)
+              }
+              else {
+                // dispatch
+                scrollport.dispatchEvent(scrollendEvent);
+              }
+              snapshot = handle;
             }
-          }, 100);
+          }));
         },
         listeners: 0, // Count of number of listeners.
       };

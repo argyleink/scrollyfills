@@ -11,7 +11,7 @@
     "require": "./dist/scrollyfills.cjs",
     "default": "./dist/scrollyfills.modern.js"
   },
-  "main": "./dist/scrollyfills.cjs", 
+  "main": "./dist/scrollyfills.cjs",
   "module": "./dist/scrollyfills.module.js",
   "unpkg": "./dist/scrollyfills.umd.js",
   "scripts": {
