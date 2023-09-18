@@ -50,7 +50,9 @@ if (!supported) {
             }
             else {
               // dispatch
-              scrollport.dispatchEvent(scrollendEvent);
+              if (scrollport) {
+                scrollport.dispatchEvent(scrollendEvent);
+              }
               timeout = 0;
             }
           }, 100);
