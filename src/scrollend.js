@@ -1,4 +1,4 @@
-const supported = "onscrollend" in window
+const supported = typeof window == 'undefined' ? true : "onscrollend" in window;
 
 if (!supported) {
   const scrollendEvent = new Event('scrollend');
