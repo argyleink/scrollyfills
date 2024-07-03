@@ -15,6 +15,11 @@ if (!supported) {
       pointers.delete(touch.identifier)
   }, {passive: true});
 
+  document.addEventListener('touchcancel', e => {
+    for (let touch of e.changedTouches)
+      pointers.delete(touch.identifier)
+  }, {passive: true});
+
   // Map of scroll-observed elements.
   let observed = new WeakMap();
 
