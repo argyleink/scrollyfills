@@ -81,7 +81,6 @@ if (!supported) {
     if (data === undefined)
       return;
 
-    data[type]--;
     // If there are still listeners, nothing more to do.
     if (--data.listeners > 0)
       return;
