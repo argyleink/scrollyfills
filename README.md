@@ -6,10 +6,10 @@
 ## Polyfills
 
 ### `scrollend`
-`npm i -D scrollyfills`
+`npm i scrollyfills`
 
 ```js
-import {scrollend} from 'scrollyfills';
+import 'scrollyfills';
 
 // use the new event as if it's been there the whole time
 someElementThatScrolls.addEventListener('scrollend', event => {
