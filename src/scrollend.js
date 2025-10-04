@@ -1,7 +1,6 @@
 const supported = typeof window == 'undefined' ? true : "onscrollend" in window;
 
 if (!supported) {
-  const scrollendEvent = new Event('scrollend');
   const pointers = new Set();
 
   // Track if any pointer is active
@@ -56,7 +55,7 @@ if (!supported) {
             else {
               // dispatch
               if (scrollport) {
-                scrollport.dispatchEvent(scrollendEvent);
+                scrollport.dispatchEvent(new Event('scrollend'));
               }
               timeout = 0;
             }
@@ -64,7 +63,7 @@ if (!supported) {
         },
         listeners: 0, // Count of number of listeners.
       };
-      originalFn.apply(scrollport, ['scroll', data.scrollListener]);
+      originalFn.apply(scrollport, ['scroll', data.scrollListener, {passive: true}]);
       observed.set(scrollport, data);
     }
     data.listeners++;
